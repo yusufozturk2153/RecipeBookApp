@@ -1,1 +1,33 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg navbar-primary bg-dark mb-2">
+    <div class="container">
+
+      <a class="navbar-brand" [routerLink]="'.'">Recipe Book</a>
+
+      <button class="navbar-toggler btn-primary" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+        &#9776;
+      </button>
+
+      <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav me-auto ">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'Quizzes/Add'" (click)="isMenuCollapsed = true">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Shopping List</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a class="dropdown-toggle nav-link" role="button" [routerLink]="'.'"> Manage </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Save Data</a></li>
+              <li><a href="#">Fetch Data</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </nav>
+
